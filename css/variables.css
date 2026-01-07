@@ -1,0 +1,46 @@
+:root {
+    /* --- COLOR PALETTE (Luxury "Coastal Elegance") --- */
+
+    /* Primary Backgrounds */
+    --color-primary-white: #ffffff;
+    --color-bg-sand: #F9F8F6;
+    /* "Greige" / Warm Sand */
+
+    /* Text Colors */
+    --color-text-heading: #1a1a1a;
+    --color-text-body: #4a4a4a;
+
+    /* Accents */
+    --color-accent-gold: #C5A059;
+    /* Muted Vintage Gold */
+    --color-accent-blue: #0A1E2F;
+    /* Midnight Blue */
+
+    /* UI States */
+    --color-border-light: rgba(0, 0, 0, 0.1);
+    --color-glass-white: rgba(255, 255, 255, 0.85);
+
+    /* --- TYPOGRAPHY --- */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    /* Fluid Sizing (Clamp) */
+    --fs-display: clamp(3rem, 5vw, 5rem);
+    --fs-h1: clamp(2.5rem, 4vw, 3.5rem);
+    --fs-h2: clamp(2rem, 3vw, 2.5rem);
+    --fs-h3: clamp(1.5rem, 2vw, 2rem);
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+
+    /* --- SPACING & LAYOUT --- */
+    --section-padding-desktop: 150px;
+    --section-padding-mobile: 80px;
+    --container-width: 1600px;
+
+    /* --- ANIMATION --- */
+    --transition-fast: 0.2s ease;
+    --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* --- SHADOWS --- */
+    --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
