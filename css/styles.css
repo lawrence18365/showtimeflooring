@@ -269,11 +269,59 @@ img {
 @media (max-width: 768px) {
     .placeholder-bg {
         background-image: url('../assets/images/event-flooring-hire-brisbane-gold-coast-hero-mobile.webp');
-        background-position: center bottom;
+        /* Shift image content UP by focusing on the upper part of the image */
+        background-position: center 15%;
+    }
+
+    .hero {
+        align-items: flex-start;
+        justify-content: center;
     }
 
     .hero-content {
-        max-width: 90%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 140px 20px 0 20px; /* Restore top padding, remove bottom constraints */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Align to top */
+        align-items: center;
+        gap: 2rem; /* Keep CTA close to H1 */
+        text-align: center !important;
+        box-sizing: border-box;
+    }
+
+    .hero h1 {
+        margin-bottom: 0;
+        font-size: 3rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-top: 0; /* Remove offset */
+    }
+    
+    .hero h1 .text-italic {
+        text-align: center;
+        width: auto;
+    }
+
+    .hero-btns {
+        width: 100%;
+        display: flex;
+        justify-content: center !important;
+        margin: 0;
+    }
+
+    .gold-cta-btn {
+        width: 100%;
+        /* Full width tap target for mobile */
+        justify-content: center;
     }
 }
 
@@ -358,12 +406,23 @@ img {
     border-radius: 4px;
     font-family: var(--font-body);
     font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--color-accent-gold);
+    border-bottom-color: var(--color-accent-blue);
+    padding-left: 10px;
+    /* Text slide on focus */
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .form-row {
@@ -388,11 +447,16 @@ img {
     border-radius: 8px;
     text-align: center;
     animation: slideUp 0.4s ease;
+    margin-top: 3rem;
+    background: var(--color-accent-blue);
+    color: white;
+    border-radius: 0;
 }
 
 .calc-result h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .result-value {
@@ -407,6 +471,7 @@ img {
     color: #666;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .small-btn {
@@ -525,18 +590,20 @@ img {
         grid-row: auto;
     }
 
-    .collage-item.wide {
+    .collage-item.wide,
+    .collage-item.big {
         grid-column: span 2;
     }
 
-    /* Keep wide items wide on mobile for impact */
+    /* Full width for landscape/big shots */
 }
 
 /* Testimonials Section */
+/* --- TESTIMONIALS (CARD POLISH) --- */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 3rem;
 }
 
@@ -547,6 +614,10 @@ img {
     box-shadow: var(--shadow-premium);
     position: relative;
     transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 0;
+    /* Sharp for luxury */
+    padding: 3rem 2rem;
 }
 
 .testimonial-card:hover {
@@ -562,6 +633,11 @@ img {
     top: 1rem;
     left: 1.5rem;
     line-height: 1;
+    font-family: 'Times New Roman', serif;
+    /* Classic Serif Quote */
+    font-style: italic;
+    top: 0;
+    left: 1rem;
 }
 
 .testimonial-text {
@@ -587,6 +663,8 @@ img {
 }
 
 /* Footer */
+/* --- FOOTER (SIGNATURE) --- */
+/* (Keeping existing footer but ensuring it feels anchored) */
 .site-footer {
     background-color: var(--color-accent-blue);
     color: var(--color-primary-white);
@@ -594,6 +672,8 @@ img {
     padding-bottom: 3rem;
     position: relative;
     overflow: hidden;
+    border-top: 10px solid var(--color-accent-gold);
+    /* Gold Band Top */
 }
 
 .site-footer::before {
@@ -684,5 +764,39 @@ img {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+
+    /* General Mobile Polish */
+    .section-padding {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        /* Ensure clamp doesn't get too small or weird */
+    }
+
+    .intro-content-wrapper {
+        padding: 2rem 1.5rem;
+        /* More space for text */
+        margin-left: 0;
+        margin-top: -30px;
+        /* Less overlap */
+    }
+
+    /* Ensure calculator fits */
+    .calculator-wrapper {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Testimonials stack cleanly */
+    .testimonial-card {
+        padding: 2rem;
     }
 }
