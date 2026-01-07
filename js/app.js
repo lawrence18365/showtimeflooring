@@ -14,28 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector('.site-header');
 let lastScroll = 0;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
+if (header) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
 
-    if (currentScroll <= 0) {
-        // Top of page
-        header.classList.remove('scrolled-up');
-        header.classList.remove('scrolled-down');
-        return;
-    }
+        if (currentScroll <= 0) {
+            // Top of page
+            header.classList.remove('scrolled-up');
+            header.classList.remove('scrolled-down');
+            return;
+        }
 
-    if (currentScroll > lastScroll && !header.classList.contains('scrolled-down')) {
-        // Scrolling Down
-        header.classList.remove('scrolled-up');
-        header.classList.add('scrolled-down');
-    } else if (currentScroll < lastScroll && header.classList.contains('scrolled-down')) {
-        // Scrolling Up
-        header.classList.remove('scrolled-down');
-        header.classList.add('scrolled-up');
-    }
+        if (currentScroll > lastScroll && !header.classList.contains('scrolled-down')) {
+            // Scrolling Down
+            header.classList.remove('scrolled-up');
+            header.classList.add('scrolled-down');
+        } else if (currentScroll < lastScroll && header.classList.contains('scrolled-down')) {
+            // Scrolling Up
+            header.classList.remove('scrolled-down');
+            header.classList.add('scrolled-up');
+        }
 
-    lastScroll = currentScroll;
-});
+        lastScroll = currentScroll;
+    });
+}
 
 /* Mobile toggle removed as nav links are gone */
 
